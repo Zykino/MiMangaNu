@@ -201,5 +201,8 @@
     <string name="searching">A la recherche de \"%s\" sont</string>
     <string name="delete_confirm">Etes-vous sûr de supprimer ces chapitres?</string>
     <string name="thanks">remerciements</string>
-    <string name="_update_at_start_up"></string>
+    <string name="_update_at_start_up">Recherche de mises à jour au démarrage</string>
+    <string name="_update_at_start_up_6hours">Au démarrage si 6 heures ont passés</string>
+    <string name="_update_at_start_up_12hours">Au démarrage si 12 heures ont passés</string>
+    <string name="_update_at_start_up_1day">Au démarrage si 1 jour est passés</string>
 </resources>
