@@ -45,11 +45,9 @@ public class AlarmReceiver extends BroadcastReceiver {
             pm = PreferenceManager.getDefaultSharedPreferences(context);
             boolean only_wifi_updates = pm.getBoolean("update_only_wifi", false);
             boolean only_wifi = pm.getBoolean("only_wifi", false);
-            NetworkUtilsAndReceiver.reset();
             if (only_wifi_updates) {
                 only_wifi = true;
             }
-            NetworkUtilsAndReceiver.reset();
             if (NetworkUtilsAndReceiver.getConnectionStatus(context, only_wifi) == NetworkUtilsAndReceiver.ConnectionStatus.CONNECTED) {
                 Navigator.connectionTimeout = Integer.parseInt(pm.getString("connection_timeout", "10"));
                 pm.edit().putLong(LAST_CHECK, System.currentTimeMillis()).apply();
@@ -58,7 +56,6 @@ public class AlarmReceiver extends BroadcastReceiver {
                 AutomaticUpdateTask automaticUpdateTask = new AutomaticUpdateTask(context, null, pm);
                 automaticUpdateTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
             }
-            NetworkUtilsAndReceiver.reset();
         } catch (Exception ignore) { //next time on connection go to update
             ignore.printStackTrace();
         }
