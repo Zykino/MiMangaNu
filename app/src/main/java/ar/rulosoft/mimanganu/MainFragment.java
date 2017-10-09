@@ -693,6 +693,7 @@ public class MainFragment extends Fragment implements View.OnClickListener, Main
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
+			NetworkUtilsAndReceiver.reset();
             if (context != null) {
                 Util.getInstance().createSearchingForUpdatesNotification(getContext(), mNotifyID);
                 Util.getInstance().showFastSnackBar(getResources().getString(R.string.searching_for_updates), getView(), getContext());
