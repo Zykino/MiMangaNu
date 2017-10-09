@@ -258,8 +258,6 @@
     <string name="clear_specific_cookies_title">Borrar cookie especifica</string>
     <string name="custom_language">Lenguaje personalizado.</string>
     <string name="deleted_no_var">Borrar</string>
-    <string name="disable_internet_detection_title">Desactivar deteccion de estado de internet.</string>
-    <string name="disable_internet_detection_subtitle">Para dispositivos en los que esta cause problemas.</string>
     <plurals name="more_chapters_not_displayed_here">
         <item quantity="one">%d y más capítulos que no pudieron ser mostrados…</item>
         <item quantity="other">%d y un capítulo que no pudo ser mostrado…</item>

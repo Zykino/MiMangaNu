@@ -30,10 +30,10 @@
 
     <PreferenceCategory android:title="@string/connection_settings">
         <android.support.v7.preference.SwitchPreferenceCompat
-            android:defaultValue="false"
-            android:key="disable_internet_detection"
-            android:summary="@string/disable_internet_detection_subtitle"
-            android:title="@string/disable_internet_detection_title" />
+            android:defaultValue="true"
+            android:key="remember_internet_state"
+            android:summary="@string/remember_internet_state_subtitle"
+            android:title="@string/remember_internet_state_title" />
         <android.support.v7.preference.SwitchPreferenceCompat
             android:defaultValue="false"
             android:key="only_wifi"

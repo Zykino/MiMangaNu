@@ -31,7 +31,7 @@ public class NetworkUtilsAndReceiver extends BroadcastReceiver {
 
     public static boolean isConnectedNonDestructive(@NonNull Context context) {
         SharedPreferences pm = PreferenceManager.getDefaultSharedPreferences(context);
-        if (!pm.getBoolean("disable_internet_detection", false)) {
+        if (pm.getBoolean("remember_internet_state", true)) {
             boolean result;
             switch (connectionStatus) {
                 case UNCHECKED:
@@ -68,7 +68,7 @@ public class NetworkUtilsAndReceiver extends BroadcastReceiver {
 
     public static boolean isConnected(@NonNull Context context) throws Exception {
         SharedPreferences pm = PreferenceManager.getDefaultSharedPreferences(context);
-        if (!pm.getBoolean("disable_internet_detection", false)) {
+        if (pm.getBoolean("remember_internet_state", true)) {
             boolean result;
             switch (connectionStatus) {
                 case UNCHECKED:
@@ -181,7 +181,7 @@ public class NetworkUtilsAndReceiver extends BroadcastReceiver {
         SharedPreferences pm = PreferenceManager.getDefaultSharedPreferences(context);
         connectionStatus = ConnectionStatus.UNCHECKED;
 
-        if (!pm.getBoolean("disable_internet_detection", false)) {
+        if (pm.getBoolean("remember_internet_state", true)) {
             if (isWifiConnected(context) || isMobileConnected(context)) {
                 Log.d("NUAR", "onRec Connected");
                 MainActivity.isConnected = true;

@@ -256,8 +256,6 @@
     <string name="clear_specific_cookies_subtitle">Lösche alle Cookies die einen bestimmten Ausdruck enthalten.</string>
     <string name="clear_all_cookies_title">Cookies löschen</string>
     <string name="clear_all_cookies_subtitle">Lösche alle Cookies. Für Seiten die eine Anmeldung benötigen (wie z.B. Batoto) muß eine erneute Anmeldung durchgeführt werden.</string>
-    <string name="disable_internet_detection_title">Status der Internetverbindung ignorieren</string>
-    <string name="disable_internet_detection_subtitle">Standardmäßig versucht MiMangaNu zu erkennen ob eine Internetverbindung vorhanden ist und deaktiviert manche Funktionalitäten wenn keine Verbindung besteht (oder erkannt wird).</string>
     <string name="app_update_title">Suche nach App Aktualisierungen</string>
     <string name="app_update_subtitle">Sucht nach App Aktualisierungen (nicht relevant für F-Droid Benutzer).</string>
     <string name="batoto_lang_auto">Automatisch</string>
