@@ -62,6 +62,9 @@ public class NetworkUtilsAndReceiver extends BroadcastReceiver {
                     return true;
             }
         } else {
+			if (ONLY_WIFI) {
+				return isWifiConnected(context);
+			}
             return true;
         }
     }
@@ -101,6 +104,9 @@ public class NetworkUtilsAndReceiver extends BroadcastReceiver {
                     return true;
             }
         } else {
+			if (ONLY_WIFI) {
+				return isWifiConnected(context);
+			}
             return true;
         }
     }
@@ -190,7 +196,12 @@ public class NetworkUtilsAndReceiver extends BroadcastReceiver {
                 MainActivity.isConnected = false;
             }
         } else {
-            MainActivity.isConnected = true;
+			if (ONLY_WIFI) {
+				MainActivity.isConnected = isWifiConnected(context);
+			}
+			else {
+				MainActivity.isConnected = true;
+			}
         }
 
         try {
