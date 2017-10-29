@@ -1,6 +1,7 @@
 package ar.rulosoft.mimanganu.servers;
 
 import android.content.Context;
+import android.util.Log;
 
 import java.net.URLEncoder;
 import java.util.ArrayList;
@@ -53,7 +54,7 @@ class JapScan extends ServerBase {
 
     @Override
     public void loadChapters(Manga manga, boolean forceReload) throws Exception {
-        loadMangaInformation(manga, forceReload);
+        loadMangaInformation(manga, true);
     }
 
     @Override
@@ -77,9 +78,11 @@ class JapScan extends ServerBase {
             manga.setGenre(getFirstMatchDefault("<div class=\"row\">.+?<div class=\"cell\">.+?<div class=\"cell\">.+?<div class=\"cell\">(.+?)</div>", source, context.getString(R.string.nodisponible)));
 
             // Chapters
-            Pattern pattern = Pattern.compile("<a href=\"(//www\\.japscan\\.com/lecture-en-ligne/[^\"]+?)\">(Scan.+?)</a>", Pattern.DOTALL);
+            Pattern pattern = Pattern.compile("<a href=\"(//www\\.japscan\\.com/lecture-en-ligne/[^\"]+?)\">(Scan.+?)</a>.?(<span.*>.*</span>)?", Pattern.DOTALL);
             Matcher matcher = pattern.matcher(source);
             while (matcher.find()) {
+            	if(matcher.group(3) != null)
+					Log.i("ZYKILOG", matcher.group(3));
                 Chapter chapter = new Chapter(matcher.group(2), "http:" + matcher.group(1));
                 chapter.addChapterFirst(manga);
             }
